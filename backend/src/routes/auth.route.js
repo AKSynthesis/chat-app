@@ -1,7 +1,6 @@
 import express from "express";
 
 import { signup, login, logout, updateProfile, checkAuth } from "../controllers/auth.controller.js";
-
 import { protectRoute } from "../middleware/auth.middleware.js";
 
 const router = express.Router();
@@ -27,7 +26,7 @@ router.post("/logout", logout);
 router.put("/update-profile", protectRoute, updateProfile);
 
 // @route GET /api/check
-// @descVerify if user is authenticated
+// @desc Verify if user is authenticated
 // @access Private
 router.get("/check", protectRoute, checkAuth);
 
